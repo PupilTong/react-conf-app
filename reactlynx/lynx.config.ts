@@ -12,9 +12,24 @@ const __dirname = path.dirname(__filename);
 
 const require = createRequire(import.meta.url);
 
-console.log("xxxxxx", require.resolve("@lynx-js/react/compat"))
+const experimental_enableReactCompiler = process.env.REACT_COMPILER === "true";
 
 export default defineConfig({
+  // use production mode to get best performance
+  mode: "production",
+  output: {
+    minify: {
+      jsOptions: {
+        minimizerOptions: {
+          // disable mangle to keep the component name
+          mangle: false,
+        },
+      },
+    },
+  },
+  performance: {
+    profile: true,
+  },
   source: {
     entry: "./src/index.tsx",
     alias: {
@@ -38,7 +53,9 @@ export default defineConfig({
         return `${url}?fullscreen=true`;
       },
     }),
-    pluginReactLynx(),
+    pluginReactLynx({
+      experimental_enableReactCompiler,
+    }),
     pluginTypeCheck(),
   ],
 });

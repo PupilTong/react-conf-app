@@ -35,6 +35,8 @@ export function TalkCard({ session, isDayOne }: Props) {
       bindtap={() => {
         console.log("Tap talk card", session.id);
         nav(`/talk/${session.id}`);
+        console.profile(`TalkPage Opening ${session.id}`);
+        console.profileEnd(`TalkPage Opening ${session.id}`);
       }}
     >
       <ThemedView

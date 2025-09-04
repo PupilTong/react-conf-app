@@ -4,7 +4,10 @@
   "main": "expo-router/entry",
   "private": true,
   "scripts": {
-    "start": "expo start",
+    "start": "REACT_COMPILER=false expo start",
+    "start:rc": "REACT_COMPILER=true NODE_ENV=production expo start",
+    "atlas:": "REACT_COMPILER=false EXPO_ATLAS=true npx expo export",
+    "atlas:rc": "REACT_COMPILER=true EXPO_ATLAS=true npx expo export",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
@@ -69,6 +72,7 @@
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react-compiler": "^19.1.0-rc.1",
     "eslint-plugin-react-native": "^5.0.0",
+    "expo-atlas": "^0.4.0",
     "patch-package": "^8.0.0",
     "prettier": "^3.2.5",
     "typescript": "~5.8.3"

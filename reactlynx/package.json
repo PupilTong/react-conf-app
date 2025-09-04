@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "rspeedy build",
-    "dev": "rspeedy dev",
+    "dev": "REACT_COMPILER=false rspeedy dev",
+    "dev:rc": "REACT_COMPILER=true rspeedy dev",
     "preview": "rspeedy preview",
     "test": "vitest run"
   },
@@ -18,6 +19,7 @@
     "@lynx-js/rspeedy": "^0.11.0",
     "@lynx-js/types": "3.4.11",
     "@rsbuild/plugin-type-check": "1.2.4",
+    "@swc/react-compiler": "^1.13.5",
     "@testing-library/jest-dom": "^6.8.0",
     "@types/react": "^18.3.23",
     "jsdom": "^26.1.0",
@@ -27,5 +29,12 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "@lynx-js/react-rsbuild-plugin": "file:./packages/lynx-js-react-rsbuild-plugin-0.10.13.tgz",
+      "@lynx-js/react-alias-rsbuild-plugin": "file:./packages/lynx-js-react-alias-rsbuild-plugin-0.10.13.tgz",
+      "@lynx-js/react-webpack-plugin": "file:./packages/lynx-js-react-webpack-plugin-0.6.20.tgz"
+    }
   }
 }

@@ -216,6 +216,8 @@ export default function TalkDetail() {
                     justifyContent: "center",
                   }}
                   bindtap={() => {
+                    console.profile(`TalkPage Closing ${talkId}`);
+                    console.profileEnd(`TalkPage Closing ${talkId}`);
                     nav(-1);
                   }}
                 >
