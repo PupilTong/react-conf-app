@@ -6,7 +6,7 @@ import "./index.css";
 import TalkDetail from "./routes/talk.jsx";
 
 root.render(
-  <page
+  <view
     style={{
       display: "flex",
       flexDirection: "column",
@@ -18,7 +18,7 @@ root.render(
         <Route path="/talk/:talk" element={<TalkDetail />} />
       </Routes>
     </MemoryRouter>
-  </page>,
+  </view>,
 );
 
 if (import.meta.webpackHot) {
