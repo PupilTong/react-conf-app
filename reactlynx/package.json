@@ -34,7 +34,8 @@
     "overrides": {
       "@lynx-js/react-rsbuild-plugin": "file:./packages/lynx-js-react-rsbuild-plugin-0.10.13.tgz",
       "@lynx-js/react-alias-rsbuild-plugin": "file:./packages/lynx-js-react-alias-rsbuild-plugin-0.10.13.tgz",
-      "@lynx-js/react-webpack-plugin": "file:./packages/lynx-js-react-webpack-plugin-0.6.20.tgz"
+      "@lynx-js/react-webpack-plugin": "file:./packages/lynx-js-react-webpack-plugin-0.6.20.tgz",
+      "@lynx-js/react": "npm:@lynx-js/react-canary@0.112.7-canary-20250909-8ec45372"
     }
   }
 }
